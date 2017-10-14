@@ -12,7 +12,20 @@ public class EjemploMetodos {
 	 */
 	void muestraMensaje(){
 		System.out.println("Bienvenido");
-	} 
+	}
+	
+	/**
+	 * Lo que se define como firma del método se les
+	 * llama parámetros
+	 * @param nombre
+	 */
+	void muestraMensaje(String nombre){
+		System.out.println("Bienvenido " + nombre);
+	}
+	
+	void muestraMensaje(String nombre, String apellidoPaterno){
+		System.out.println("Bienvenido " + nombre + " " + apellidoPaterno);
+	}
 	
 	/**
 	 * El método main es el principal, el responsable
@@ -21,7 +34,9 @@ public class EjemploMetodos {
 	 */
 	public static void main(String[] args) {
 		EjemploMetodos ej = new EjemploMetodos();
-		ej.muestraMensaje();
+		//Cuando le paso el valor al método
+		//se llama argumentos
+		ej.muestraMensaje("Gary", "Castellanos");	
 	}
 
 }
