@@ -1,7 +1,7 @@
 package com.udev.poo.metodos;
 
 public class EjemploMetodos {
-
+	
 	//tipo_retorno nombre_metodo(tipo_dato nomParam){
 		//return
 	//} 
@@ -28,6 +28,23 @@ public class EjemploMetodos {
 	}
 	
 	/**
+	 * EL método regresa o recupera una cadena de caracteres
+	 * el texto que regresa es "Bienvenido"
+	 * @return
+	 */
+	String regresaMensaje(){
+		//String msg = "Bienvenido";
+		//return msg;
+		return "Bienvenido";
+	}
+	
+	String regresaMensaje(String nombre){
+		//String msg = "Bienvenido";
+		//return msg;
+		return "Bienvenido " + nombre;
+	}
+	
+	/**
 	 * El método main es el principal, el responsable
 	 * de invocar a las clases
 	 * @param args
@@ -36,7 +53,9 @@ public class EjemploMetodos {
 		EjemploMetodos ej = new EjemploMetodos();
 		//Cuando le paso el valor al método
 		//se llama argumentos
-		ej.muestraMensaje("Gary", "Castellanos");	
+		ej.muestraMensaje("Gary", "Castellanos");
+		
+		String msgRegresado = ej.regresaMensaje("Gary");
+		System.out.println("Mensaje: " + msgRegresado);
 	}
-
 }
