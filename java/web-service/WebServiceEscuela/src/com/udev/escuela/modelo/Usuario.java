@@ -15,11 +15,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "Usuario")
 public class Usuario {
 
-	@XmlElement(required = true)
+	@XmlElement(name="id")
     private int id;
-    @XmlElement(required = true)
+    @XmlElement(name="nombre")
     private String nombre;
-    @XmlElement(required = true)
+    @XmlElement(name="role")
     private String role;
     
     public Usuario(){

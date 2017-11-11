@@ -9,6 +9,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import com.udev.escuela.modelo.Usuario;
+import com.udev.escuela.modelo.Usuarios;
 
 @Path("UsuarioService")
 public class UsuarioService {
@@ -23,6 +24,17 @@ public class UsuarioService {
 		return Response.status(Status.NOT_FOUND).build();
 	}
 	
+	@GET
+	@Path("/usuarios")
+	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+	public Usuarios obtieneClientes(){
+		Usuarios usuarios = new Usuarios();
+		usuarios.getUsuario().add(new Usuario(1, "Gary", "Admin"));
+		usuarios.getUsuario().add(new Usuario(2, "Pepe", "Invitado"));
+		usuarios.getUsuario().add(new Usuario(3, "Juan", "Invitado"));
+		usuarios.getUsuario().add(new Usuario(4, "Carlos", "Invitado"));
+		usuarios.getUsuario().add(new Usuario(5, "Maria", "Invitado"));
+		return usuarios;
+	}
+	
 }
-
-
