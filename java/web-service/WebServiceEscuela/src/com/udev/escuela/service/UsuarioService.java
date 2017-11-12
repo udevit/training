@@ -16,8 +16,8 @@ public class UsuarioService {
 	
 	@GET
 	@Path("/usuarios/{id}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response obtieneCliente(@PathParam("id") int id){
+	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+	public Response obtenerUsuario(@PathParam("id") int id){
 		if(id == 1){
 			return Response.ok(new Usuario(2, "Gary", "Admin")).build();
 		}
@@ -27,14 +27,15 @@ public class UsuarioService {
 	@GET
 	@Path("/usuarios")
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-	public Usuarios obtieneClientes(){
+	public Response obtenerUsuarios(){
 		Usuarios usuarios = new Usuarios();
 		usuarios.getUsuario().add(new Usuario(1, "Gary", "Admin"));
 		usuarios.getUsuario().add(new Usuario(2, "Pepe", "Invitado"));
 		usuarios.getUsuario().add(new Usuario(3, "Juan", "Invitado"));
 		usuarios.getUsuario().add(new Usuario(4, "Carlos", "Invitado"));
 		usuarios.getUsuario().add(new Usuario(5, "Maria", "Invitado"));
-		return usuarios;
+		
+		return Response.ok(usuarios).build();
 	}
 	
 }

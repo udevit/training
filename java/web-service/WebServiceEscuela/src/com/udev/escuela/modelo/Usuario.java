@@ -8,18 +8,18 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "id",
     "nombre",
     "role",
+    "id"
 })
 @XmlRootElement(name = "Usuario")
 public class Usuario {
 
-	@XmlElement(name="id")
+	@XmlElement(name="noControl")
     private int id;
     @XmlElement(name="nombre")
     private String nombre;
-    @XmlElement(name="role")
+    @XmlElement(name="puesto")
     private String role;
     
     public Usuario(){
